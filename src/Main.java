@@ -45,6 +45,6 @@ public class Main {
 
         // Calculate and display the SGPA
         double sgpa = totalGradePoints / totalCredits;
-        System.out.printf("\nYour SGPA sem grade point average  is: %.2f\n", sgpa);
+        System.out.printf("\nYour SGPA (Semester  Grade Point Average)  is: %.2f\n", sgpa+1);
     }
 }
