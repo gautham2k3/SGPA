@@ -4,10 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Define the valid grade range and associated grade point
-        String[] validGrades = {"O", "A+", "A", "B+", "B", "C+", "C", "D+", "D", "F"};
-        double[] gradePoints = {10, 9, 8, 7, 6, 5, 4, 3, 2, 0};
-
         // Get input from the user
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of subjects: ");
@@ -24,27 +20,32 @@ public class Main {
             String grade = scanner.next().toUpperCase();
 
             // Validate the grade input
-            int index = -1;
-            for(int j=0; j<validGrades.length; j++){
-                if(validGrades[j].equals(grade)){
-                    index = j;
-                    break;
-                }
-            }
-            if(index == -1){
-                System.out.println("Invalid grade entered for subject " + i + ". Please try again.");
-                i--;
-                continue;
+            double gradePoint = getGradePoint(grade);
+            if(gradePoint == -1.0) {
+                System.out.println("Invalid grade entered. Please try again.");
+                return;
             }
 
             // Calculate the grade point and update the totals
-            double gradePoint = gradePoints[index];
             totalCredits += credits;
-            totalGradePoints += (gradePoint * credits);
+            totalGradePoints += gradePoint * credits;
         }
 
         // Calculate and display the SGPA
         double sgpa = totalGradePoints / totalCredits;
-        System.out.printf("\nYour SGPA (Semester  Grade Point Average)  is: %.2f\n", sgpa+1);
+        System.out.printf("\nYour SGPA (Semester  Grade Point Average)  is: %.2f\n", sgpa);
+    }
+    public static double getGradePoint(String grade) {
+        return switch (grade) {
+            case "A+" -> 10.0;
+            case "A" -> 9.0;
+            case "B+" -> 8.0;
+            case "B" -> 7.0;
+            case "C+" -> 6.0;
+            case "C" -> 5.0;
+            case "D" -> 4.0;
+            case "F" -> 0.0;
+            default -> -1.0; // indicates invalid grade
+        };
     }
 }
