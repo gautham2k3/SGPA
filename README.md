@@ -1,5 +1,5 @@
 # SGPA Calculator
-
+![SGPA](https://socialify.git.ci/gautham2k3/SGPA/image?description=1&font=KoHo&language=1&name=1&owner=1&pattern=Charlie%20Brown&stargazers=1&theme=Auto)
 This is a Java program that calculates your Semester Grade Point Average (SGPA) based on the grades and credits of the subjects you have taken in a semester.
 
 ## How to Use
