@@ -11,7 +11,7 @@ This is a Java program that calculates your Semester Grade Point Average (SGPA) 
 5. Enter the number of subjects you have taken in the semester.
 6. Enter the grade and credits of each subject when prompted.
 7. The program will display your SGPA.
-8. The program will also save the entered data and SGPA to a file named `[Name]_sgpa_data.txt` (e.g., `John_Doe_sgpa_data.txt`).
+8. The program will also save the entered data and SGPA to a file named `[Name]_sgpa_data.txt` (e.g., [`John_Doe_sgpa_data.txt`](John_Doe_sgpa_data.txt)).
 
 ## Grade Point Scale
 
