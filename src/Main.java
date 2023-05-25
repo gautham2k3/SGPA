@@ -19,6 +19,8 @@ public class Main {
         double totalGradePoints = 0;
 
         StringBuilder data = new StringBuilder();
+        data.append("Name: ").append(name).append("\n");
+        data.append("ID: ").append(id).append("\n\n");
 
         for(int i=1; i<=numSubjects; i++){
             System.out.println("\nSubject " + i + ":");
@@ -37,11 +39,22 @@ public class Main {
             // Calculate the grade point and update the totals
             totalCredits += credits;
             totalGradePoints += gradePoint * credits;
+
+            // Append subject data to StringBuilder
+            data.append("Subject ").append(i).append(": ").append("Credits: ").append(credits).append(", Grade: ").append(grade).append("\n");
         }
 
         // Calculate and display the SGPA
         double sgpa = totalGradePoints / totalCredits;
         System.out.printf("\nYour SGPA (Semester Grade Point Average)  is: %.2f\n", sgpa);
+
+        // Append SGPA to StringBuilder
+        data.append("\nSGPA: ").append(String.format("%.2f", sgpa));
+
+        // Save data to a file
+        // Save data to a file
+        saveDataToFile(data.toString(), name);
+
     }
     public static double getGradePoint(String grade) {
         return switch (grade) {
@@ -55,5 +68,18 @@ public class Main {
             case "F" -> 0.0;
             default -> -1.0; // indicates invalid grade
         };
+    }
+    public static void saveDataToFile(String data, String name) {
+        String fileName = name.replaceAll("\\s+", "_") + "_sgpa_data.txt"; // Replace spaces with underscores in the name
+        try {
+            FileWriter fileWriter = new FileWriter(fileName);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
+            printWriter.println(data);
+            printWriter.close();
+            System.out.println("Data saved to file: " + fileName);
+        } catch (IOException e) {
+            System.out.println("An error occurred while saving the data to a file.");
+            e.printStackTrace();
+        }
     }
 }
