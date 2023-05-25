@@ -1,0 +1,9 @@
+Name: John Doe
+ID: 12345
+
+Subject 1: Credits: 3.0, Grade: A
+Subject 2: Credits: 4.0, Grade: B+
+Subject 3: Credits: 3.0, Grade: C
+Subject 4: Credits: 2.0, Grade: B
+
+SGPA: 7.33
