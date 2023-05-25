@@ -6,6 +6,10 @@ public class Main {
 
         // Get input from the user
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter your ID: ");
+        String id = scanner.nextLine();
         System.out.print("Enter the number of subjects: ");
         int numSubjects = scanner.nextInt();
 
@@ -33,7 +37,7 @@ public class Main {
 
         // Calculate and display the SGPA
         double sgpa = totalGradePoints / totalCredits;
-        System.out.printf("\nYour SGPA (Semester  Grade Point Average)  is: %.2f\n", sgpa);
+        System.out.printf("\nYour SGPA (Semester Grade Point Average)  is: %.2f\n", sgpa);
     }
     public static double getGradePoint(String grade) {
         return switch (grade) {
