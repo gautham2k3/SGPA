@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 public class Main {
 
     public static void main(String[] args) {
@@ -15,6 +17,8 @@ public class Main {
 
         double totalCredits = 0;
         double totalGradePoints = 0;
+
+        StringBuilder data = new StringBuilder();
 
         for(int i=1; i<=numSubjects; i++){
             System.out.println("\nSubject " + i + ":");
